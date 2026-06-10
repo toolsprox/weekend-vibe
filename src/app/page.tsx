@@ -50,7 +50,7 @@ export default function WeekendVibePage() {
             className="inline-flex items-center space-x-2 bg-white/10 text-white rounded-full px-5 py-2 mb-8 shadow-[0_0_15px_rgba(217,70,239,0.5)] border border-fuchsia-500/50 cursor-pointer self-start backdrop-blur-md"
           >
             <Sparkles className="w-4 h-4 text-cyan-400 animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">London's Weekend Vibe</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">Weekend Vibes — Thu to Sun</span>
           </motion.div>
           
           <h1 className="text-5xl md:text-8xl font-serif font-bold mb-8 text-white leading-tight tracking-tight drop-shadow-lg">
@@ -61,14 +61,14 @@ export default function WeekendVibePage() {
                 transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
                 className="text-transparent bg-clip-text bg-[length:200%_auto] bg-gradient-to-r from-fuchsia-500 via-cyan-400 to-fuchsia-500 relative z-10"
               >
-                Chill Weekend Vibe.
+                Weekend Vibe.
               </motion.span>
               <motion.span initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.8, duration: 1 }} className="absolute bottom-2 left-0 right-0 h-4 bg-fuchsia-500/30 -z-10 origin-left blur-sm" />
             </span>
           </h1>
           
           <p className="text-xl text-white/80 mb-12 max-w-lg leading-relaxed font-medium">
-            Elevate your Friday nights and weekend brunches. Signature cocktails, an electric atmosphere, and the most authentic Indian sharing platters in London.
+            Elevate your Thursday to Sunday. Signature cocktails, an electric atmosphere, and the most authentic Indian sharing platters at Masakali London.
           </p>
 
           <div className="flex gap-6 mt-4">
