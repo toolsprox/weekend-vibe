@@ -20,7 +20,7 @@ export default function WeekendVibePage() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length)
-    }, 7000)
+    }, 5000)
     return () => clearInterval(timer)
   }, [images.length])
 
