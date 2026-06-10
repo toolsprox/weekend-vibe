@@ -109,9 +109,10 @@ export default function WeekendVibePage() {
                 <motion.div 
                   animate={{ y: [-15, 15, -15], rotate: [0, 5, -5, 0] }} 
                   transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }} 
-                  className="w-3/4 h-3/4 relative z-20 filter drop-shadow-[0_20px_30px_rgba(217,70,239,0.5)]"
+                  className="w-[70%] h-[70%] relative z-20 filter drop-shadow-[0_0_30px_rgba(217,70,239,0.6)] rounded-full overflow-hidden"
                 >
-                  <Image src="/images/user_upload_1.png" alt="Elemental Weekend Platter" fill className="object-contain" priority />
+                  {/* We scale the image up slightly to push the baked-in black borders out of the circular clipping mask */}
+                  <Image src="/images/user_upload_1.png" alt="Elemental Weekend Platter" fill className="object-cover scale-[1.15]" priority />
                 </motion.div>
 
                 {/* Orbiting Culinary Icons */}
