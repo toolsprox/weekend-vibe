@@ -22,6 +22,8 @@ const playfair = Playfair_Display({
   weight: ["400", "600", "700"],
 });
 
+import ReservationModal from "@/components/shared/ReservationModal";
+
 export const metadata: Metadata = {
   title: "Masakali | Weekend Vibe",
   description: "The Ultimate Weekend Vibe at London's premier Indian restaurant. Book your table for Friday nights and weekend brunches.",
@@ -61,6 +63,7 @@ export default function RootLayout({
           </Script>
         )}
         <MobileCTA />
+        <ReservationModal />
       </body>
     </html>
   );

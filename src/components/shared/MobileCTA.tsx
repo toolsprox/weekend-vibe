@@ -35,7 +35,7 @@ export default function MobileCTA() {
             <Utensils className="w-5 h-5 mb-1" />
             <span className="text-[10px] font-bold uppercase tracking-widest">Menu</span>
           </Link>
-          <Link href="https://www.opentable.co.uk/r/masakali-restaurant-euston-london?corrid=41f8fc28-8609-4b5f-8750-347046547a0c&avt=eyJ2IjozLCJtIjowLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2026-06-09T19%3A00%3A00" target="_blank" rel="noopener noreferrer" className="flex-[2] bg-[#0F0F0F] text-white rounded-2xl py-4 flex flex-col items-center justify-center shadow-[0_10px_40px_rgba(124,255,1,0.3)] active:scale-95 transition-transform overflow-hidden relative group">
+          <Link href="#reserve" className="flex-[2] bg-[#0F0F0F] text-white rounded-2xl py-4 flex flex-col items-center justify-center shadow-[0_10px_40px_rgba(124,255,1,0.3)] active:scale-95 transition-transform overflow-hidden relative group">
             <div className="absolute inset-0 bg-gradient-to-r from-[#5CB800] to-[#7CFF01] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <CalendarHeart className="w-5 h-5 mb-1 text-[#7CFF01] group-hover:text-black relative z-10" />
             <span className="text-[10px] font-bold uppercase tracking-widest relative z-10 group-hover:text-black">Book Table</span>

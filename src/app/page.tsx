@@ -72,7 +72,7 @@ export default function WeekendVibePage() {
           </p>
 
           <div className="flex gap-6 mt-4">
-            <PulseCTA href="https://www.opentable.co.uk/r/masakali-restaurant-euston-london?corrid=41f8fc28-8609-4b5f-8750-347046547a0c&avt=eyJ2IjozLCJtIjowLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2026-06-09T19%3A00%3A00" target="_blank" rel="noopener noreferrer" className="group relative bg-black text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(34,211,238,0.5)] border border-cyan-400/50 hover:shadow-[0_0_50px_rgba(217,70,239,0.8)] hover:border-fuchsia-500 transition-all duration-300">
+            <PulseCTA href="#reserve" className="group relative bg-black text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(34,211,238,0.5)] border border-cyan-400/50 hover:shadow-[0_0_50px_rgba(217,70,239,0.8)] hover:border-fuchsia-500 transition-all duration-300">
               <span className="relative z-10 flex items-center">
                 Secure Your Weekend Table <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </span>
@@ -237,7 +237,7 @@ export default function WeekendVibePage() {
       <section className="py-24 max-w-4xl mx-auto px-4 text-center relative z-10">
         <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">Don't Miss Out</h2>
         <p className="text-xl text-fuchsia-100 mb-10">Our weekend tables are our most popular. Secure your reservation now to guarantee your spot.</p>
-        <Link href="https://www.opentable.co.uk/r/masakali-restaurant-euston-london?corrid=41f8fc28-8609-4b5f-8750-347046547a0c&avt=eyJ2IjozLCJtIjowLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2026-06-09T19%3A00%3A00" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-transparent border-2 border-cyan-400 text-cyan-300 font-bold text-lg px-12 py-5 rounded-2xl hover:bg-cyan-400 hover:text-black hover:shadow-[0_0_40px_rgba(34,211,238,0.8)] transition-all duration-300 group relative overflow-hidden">
+        <Link href="#reserve" className="inline-flex items-center bg-transparent border-2 border-cyan-400 text-cyan-300 font-bold text-lg px-12 py-5 rounded-2xl hover:bg-cyan-400 hover:text-black hover:shadow-[0_0_40px_rgba(34,211,238,0.8)] transition-all duration-300 group relative overflow-hidden">
           <span className="relative z-10 flex items-center">
             Book Your Weekend <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </span>
