@@ -27,11 +27,11 @@ export default function WeekendVibePage() {
   return (
     <main className="min-h-screen bg-[#05000A] text-white relative overflow-hidden font-sans pt-32 pb-16">
       
-      {/* Disco Lights (Floating Elements) */}
-      <motion.div animate={{ y: [0, -40, 0], x: [0, 50, 0], scale: [1, 1.5, 1], opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[10%] left-[20%] w-32 h-32 rounded-full bg-fuchsia-500/40 blur-3xl pointer-events-none" />
-      <motion.div animate={{ y: [0, 60, 0], x: [0, -40, 0], scale: [1, 2, 1], opacity: [0.2, 0.7, 0.2] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[30%] right-[10%] w-48 h-48 rounded-full bg-cyan-400/40 blur-3xl pointer-events-none" />
-      <motion.div animate={{ y: [0, -80, 0], x: [0, 60, 0], scale: [1, 1.8, 1], opacity: [0.4, 0.9, 0.4] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-[15%] left-[30%] w-40 h-40 rounded-full bg-purple-600/40 blur-3xl pointer-events-none" />
-      <motion.div animate={{ y: [0, 50, 0], x: [0, -50, 0], scale: [1, 1.3, 1], opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-[30%] right-[25%] w-36 h-36 rounded-full bg-lime-400/30 blur-3xl pointer-events-none" />
+      {/* Disco Lights (Floating Elements) - Hidden on mobile for performance */}
+      <motion.div animate={{ y: [0, -40, 0], x: [0, 50, 0], scale: [1, 1.5, 1], opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="hidden md:block absolute top-[10%] left-[20%] w-32 h-32 rounded-full bg-fuchsia-500/40 blur-3xl pointer-events-none" />
+      <motion.div animate={{ y: [0, 60, 0], x: [0, -40, 0], scale: [1, 2, 1], opacity: [0.2, 0.7, 0.2] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} className="hidden md:block absolute top-[30%] right-[10%] w-48 h-48 rounded-full bg-cyan-400/40 blur-3xl pointer-events-none" />
+      <motion.div animate={{ y: [0, -80, 0], x: [0, 60, 0], scale: [1, 1.8, 1], opacity: [0.4, 0.9, 0.4] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="hidden md:block absolute bottom-[15%] left-[30%] w-40 h-40 rounded-full bg-purple-600/40 blur-3xl pointer-events-none" />
+      <motion.div animate={{ y: [0, 50, 0], x: [0, -50, 0], scale: [1, 1.3, 1], opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="hidden md:block absolute bottom-[30%] right-[25%] w-36 h-36 rounded-full bg-lime-400/30 blur-3xl pointer-events-none" />
       
       {/* Mini Laser Beams (Diagonal lines) */}
       <motion.div animate={{ opacity: [0, 0.5, 0] }} transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }} className="absolute top-1/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent -rotate-12 transform origin-left" />
@@ -146,16 +146,16 @@ export default function WeekendVibePage() {
                   transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
                   className="absolute inset-0 z-30"
                 >
-                  <motion.div animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 25, ease: "linear" }} className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 bg-cyan-500/20 backdrop-blur-md rounded-full border border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.8)]">
+                  <motion.div animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 25, ease: "linear" }} className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 bg-cyan-500/40 md:bg-cyan-500/20 md:backdrop-blur-md rounded-full border border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.8)]">
                     <Martini className="w-6 h-6 text-cyan-300" />
                   </motion.div>
-                  <motion.div animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 25, ease: "linear" }} className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 p-3 bg-fuchsia-500/20 backdrop-blur-md rounded-full border border-fuchsia-400 shadow-[0_0_15px_rgba(217,70,239,0.8)]">
+                  <motion.div animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 25, ease: "linear" }} className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 p-3 bg-fuchsia-500/40 md:bg-fuchsia-500/20 md:backdrop-blur-md rounded-full border border-fuchsia-400 shadow-[0_0_15px_rgba(217,70,239,0.8)]">
                     <UtensilsCrossed className="w-6 h-6 text-fuchsia-300" />
                   </motion.div>
-                  <motion.div animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 25, ease: "linear" }} className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 p-3 bg-lime-500/20 backdrop-blur-md rounded-full border border-lime-400 shadow-[0_0_15px_rgba(163,230,53,0.8)]">
+                  <motion.div animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 25, ease: "linear" }} className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 p-3 bg-lime-500/40 md:bg-lime-500/20 md:backdrop-blur-md rounded-full border border-lime-400 shadow-[0_0_15px_rgba(163,230,53,0.8)]">
                     <Clock className="w-6 h-6 text-lime-300" />
                   </motion.div>
-                  <motion.div animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 25, ease: "linear" }} className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 p-3 bg-purple-500/20 backdrop-blur-md rounded-full border border-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.8)]">
+                  <motion.div animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 25, ease: "linear" }} className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 p-3 bg-purple-500/40 md:bg-purple-500/20 md:backdrop-blur-md rounded-full border border-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.8)]">
                     <Star className="w-6 h-6 text-purple-300" />
                   </motion.div>
                 </motion.div>
@@ -164,7 +164,7 @@ export default function WeekendVibePage() {
                 <motion.div 
                   animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.7, 0.3] }}
                   transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                  className="absolute inset-0 bg-gradient-to-tr from-cyan-500 via-fuchsia-500 to-lime-500 rounded-full blur-2xl -z-10 mix-blend-screen"
+                  className="absolute inset-0 bg-gradient-to-tr from-cyan-500 via-fuchsia-500 to-lime-500 rounded-full blur-xl md:blur-2xl -z-10 mix-blend-normal md:mix-blend-screen opacity-50 md:opacity-100"
                 ></motion.div>
 
               </div>
@@ -181,7 +181,7 @@ export default function WeekendVibePage() {
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             whileHover={{ y: -10, scale: 1.02 }}
-            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-black/40 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(34,211,238,0.1)] hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all border border-cyan-500/30 hover:border-cyan-400 relative overflow-hidden backdrop-blur-xl"
+            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-[#11051F] md:bg-black/40 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(34,211,238,0.1)] hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all border border-cyan-500/30 hover:border-cyan-400 relative overflow-hidden md:backdrop-blur-xl"
           >
             <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-cyan-500/40 transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.5)]">
               <Music className="w-8 h-8 text-cyan-300" />
@@ -193,7 +193,7 @@ export default function WeekendVibePage() {
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
             whileHover={{ y: -10, scale: 1.02 }}
-            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-black/40 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(217,70,239,0.1)] hover:shadow-[0_0_30px_rgba(217,70,239,0.3)] transition-all border border-fuchsia-500/30 hover:border-fuchsia-400 relative overflow-hidden backdrop-blur-xl"
+            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-[#11051F] md:bg-black/40 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(217,70,239,0.1)] hover:shadow-[0_0_30px_rgba(217,70,239,0.3)] transition-all border border-fuchsia-500/30 hover:border-fuchsia-400 relative overflow-hidden md:backdrop-blur-xl"
           >
             <div className="w-16 h-16 bg-fuchsia-500/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-fuchsia-500/40 transition-all duration-300 shadow-[0_0_15px_rgba(217,70,239,0.5)]">
               <Martini className="w-8 h-8 text-fuchsia-300" />
@@ -205,7 +205,7 @@ export default function WeekendVibePage() {
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ y: -10, scale: 1.02 }}
-            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-black/40 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(163,230,53,0.1)] hover:shadow-[0_0_30px_rgba(163,230,53,0.3)] transition-all border border-lime-500/30 hover:border-lime-400 relative overflow-hidden backdrop-blur-xl"
+            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-[#11051F] md:bg-black/40 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(163,230,53,0.1)] hover:shadow-[0_0_30px_rgba(163,230,53,0.3)] transition-all border border-lime-500/30 hover:border-lime-400 relative overflow-hidden md:backdrop-blur-xl"
           >
             <div className="w-16 h-16 bg-lime-500/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-lime-500/40 transition-all duration-300 shadow-[0_0_15px_rgba(163,230,53,0.5)]">
               <UtensilsCrossed className="w-8 h-8 text-lime-300" />
