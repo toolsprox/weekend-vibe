@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-poppins);
+  --font-serif: var(--font-poppins);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+@layer base {
+  :root {
+    --background: #FDFBF7; 
+    --foreground: #0F0F0F;
+
+    /* Glassmorphism base for cards */
+    --card: rgba(255, 255, 255, 0.4);
+    --card-foreground: #0F0F0F;
+
+    --popover: #ffffff;
+    --popover-foreground: #0F0F0F;
+
+    /* Bright Neon Green */
+    --primary: #7CFF01; 
+    --primary-foreground: #0F0F0F;
+
+    --secondary: #e2e8f0;
+    --secondary-foreground: #0F0F0F;
+
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+
+    --accent: #7CFF01;
+    --accent-foreground: #0F0F0F;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #f8fafc;
+
+    /* Subtle borders for glass */
+    --border: rgba(0, 0, 0, 0.05);
+    --input: rgba(0, 0, 0, 0.05);
+    --ring: #7CFF01;
+
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    cursor: default !important;
+  }
+  a, button, [role="button"] {
+    cursor: pointer !important;
+  }
+  input, select, textarea {
+    cursor: text !important;
+  }
+}
+
+@layer utilities {
+  .text-neon {
+    color: var(--primary);
+  }
+  .bg-neon {
+    background-color: var(--primary);
+  }
+  .border-neon {
+    border-color: var(--primary);
+  }
+  
+  /* Enhanced Premium Glassmorphism styling */
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[30px] shadow-[0_20px_40px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)];
+  }
+  
+  .glass-card-dark {
+    @apply bg-[#0F0F0F]/80 backdrop-blur-2xl border border-white/10 rounded-[30px] shadow-[0_30px_60px_rgba(0,0,0,0.2)];
+  }
+
+  .glass-floating {
+    @apply bg-white/70 backdrop-blur-2xl border border-white/60 shadow-[0_10px_30px_rgba(0,0,0,0.05)];
+  }
+
+  /* Deep layered shadows */
+  .shadow-deep {
+    box-shadow: 0 30px 60px -12px rgba(124, 255, 1, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 3D Transform Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  
+  /* Glowing Orb background */
+  .glow-orb {
+    @apply absolute rounded-full blur-[100px] opacity-20 pointer-events-none;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  }
+
+  /* Hot Smoke Effect */
+  .smoke-container {
+    @apply absolute inset-0 pointer-events-none z-20 overflow-visible;
+  }
+  
+  .smoke {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    filter: blur(15px);
+    opacity: 0;
+    animation: rise-and-fade 4s infinite ease-in;
+  }
+
+  .smoke:nth-child(1) { left: 30%; bottom: 20%; animation-delay: 0s; transform: scale(1); }
+  .smoke:nth-child(2) { left: 50%; bottom: 10%; animation-delay: 1.5s; transform: scale(1.5); }
+  .smoke:nth-child(3) { left: 70%; bottom: 30%; animation-delay: 0.8s; transform: scale(0.8); }
+  .smoke:nth-child(4) { left: 40%; bottom: 40%; animation-delay: 2.2s; transform: scale(1.2); }
+
+  @keyframes rise-and-fade {
+    0% {
+      transform: translateY(0) scale(1) rotate(0deg);
+      opacity: 0;
+    }
+    30% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-150px) scale(3) rotate(45deg);
+      opacity: 0;
+    }
+  }
+}
