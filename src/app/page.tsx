@@ -102,23 +102,46 @@ export default function WeekendVibePage() {
                 className="absolute inset-4 rounded-full bg-gradient-to-tr from-cyan-500 via-fuchsia-500 to-lime-500 blur-3xl -z-10 mix-blend-screen"
               ></motion.div>
 
-              {/* Spinning Elemental Lottie Animation */}
-              <motion.div 
-                animate={{ 
-                  rotate: 360, 
-                  filter: [
-                    'hue-rotate(0deg) saturate(200%) brightness(120%) drop-shadow(0 0 30px rgba(34,211,238,0.8))',
-                    'hue-rotate(90deg) saturate(250%) brightness(130%) drop-shadow(0 0 40px rgba(217,70,239,0.8))',
-                    'hue-rotate(180deg) saturate(200%) brightness(120%) drop-shadow(0 0 30px rgba(163,230,53,0.8))',
-                    'hue-rotate(270deg) saturate(250%) brightness(130%) drop-shadow(0 0 40px rgba(217,70,239,0.8))',
-                    'hue-rotate(360deg) saturate(200%) brightness(120%) drop-shadow(0 0 30px rgba(34,211,238,0.8))'
-                  ]
-                }} 
-                transition={{ repeat: Infinity, duration: 20, ease: "linear" }} 
-                className="w-full h-full relative z-10 origin-center rounded-full mix-blend-hard-light flex items-center justify-center"
-              >
-                <Lottie animationData={discoFoodAnimation} loop={true} className="w-full h-full object-contain mix-blend-normal" />
-              </motion.div>
+              {/* Beautiful Food Galaxy Animation */}
+              <div className="w-full h-full relative z-10 flex items-center justify-center">
+                
+                {/* Central Floating Platter */}
+                <motion.div 
+                  animate={{ y: [-15, 15, -15], rotate: [0, 5, -5, 0] }} 
+                  transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }} 
+                  className="w-3/4 h-3/4 relative z-20 filter drop-shadow-[0_20px_30px_rgba(217,70,239,0.5)]"
+                >
+                  <Image src="/images/user_upload_1.png" alt="Elemental Weekend Platter" fill className="object-contain" priority />
+                </motion.div>
+
+                {/* Orbiting Culinary Icons */}
+                <motion.div 
+                  animate={{ rotate: 360 }} 
+                  transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+                  className="absolute inset-0 z-30"
+                >
+                  <motion.div animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 25, ease: "linear" }} className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 p-3 bg-cyan-500/20 backdrop-blur-md rounded-full border border-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.8)]">
+                    <Martini className="w-6 h-6 text-cyan-300" />
+                  </motion.div>
+                  <motion.div animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 25, ease: "linear" }} className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 p-3 bg-fuchsia-500/20 backdrop-blur-md rounded-full border border-fuchsia-400 shadow-[0_0_15px_rgba(217,70,239,0.8)]">
+                    <UtensilsCrossed className="w-6 h-6 text-fuchsia-300" />
+                  </motion.div>
+                  <motion.div animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 25, ease: "linear" }} className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 p-3 bg-lime-500/20 backdrop-blur-md rounded-full border border-lime-400 shadow-[0_0_15px_rgba(163,230,53,0.8)]">
+                    <Clock className="w-6 h-6 text-lime-300" />
+                  </motion.div>
+                  <motion.div animate={{ rotate: -360 }} transition={{ repeat: Infinity, duration: 25, ease: "linear" }} className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 p-3 bg-purple-500/20 backdrop-blur-md rounded-full border border-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.8)]">
+                    <Star className="w-6 h-6 text-purple-300" />
+                  </motion.div>
+                </motion.div>
+
+                {/* Pulsing Energy Background */}
+                <motion.div 
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.7, 0.3] }}
+                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                  className="absolute inset-0 bg-gradient-to-tr from-cyan-500 via-fuchsia-500 to-lime-500 rounded-full blur-2xl -z-10 mix-blend-screen"
+                ></motion.div>
+
+              </div>
             </div>
         </motion.div>
       </section>
