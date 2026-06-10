@@ -1,14 +1,28 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Martini, Music, Star, Clock, UtensilsCrossed, Sparkles } from 'lucide-react'
 import PulseCTA from '@/components/shared/PulseCTA'
-import Lottie from 'lottie-react'
-import discoFoodAnimation from '../../public/lottie/disco-food.json'
 
 export default function WeekendVibePage() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const images = [
+    "/images/user_upload_1.png",
+    "/images/top_burger.png",
+    "/images/top_pizza.png",
+    "/images/top_noodles.png",
+    "/images/top_barbecue.png"
+  ]
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length)
+    }, 7000)
+    return () => clearInterval(timer)
+  }, [images.length])
 
   return (
     <main className="min-h-screen bg-[#05000A] text-white relative overflow-hidden font-sans pt-32 pb-16">
@@ -47,7 +61,7 @@ export default function WeekendVibePage() {
                 transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
                 className="text-transparent bg-clip-text bg-[length:200%_auto] bg-gradient-to-r from-fuchsia-500 via-cyan-400 to-fuchsia-500 relative z-10"
               >
-                Disco Vibe.
+                Chill Weekend Vibe.
               </motion.span>
               <motion.span initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.8, duration: 1 }} className="absolute bottom-2 left-0 right-0 h-4 bg-fuchsia-500/30 -z-10 origin-left blur-sm" />
             </span>
@@ -105,14 +119,25 @@ export default function WeekendVibePage() {
               {/* Beautiful Food Galaxy Animation */}
               <div className="w-full h-full relative z-10 flex items-center justify-center">
                 
-                {/* Central Floating Platter */}
+                {/* Central Floating Platter Slider */}
                 <motion.div 
                   animate={{ y: [-15, 15, -15], rotate: [0, 5, -5, 0] }} 
                   transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }} 
                   className="w-[70%] h-[70%] relative z-20 filter drop-shadow-[0_0_30px_rgba(217,70,239,0.6)] rounded-full overflow-hidden"
                 >
-                  {/* We scale the image up slightly to push the baked-in black borders out of the circular clipping mask */}
-                  <Image src="/images/user_upload_1.png" alt="Elemental Weekend Platter" fill className="object-cover scale-[1.15]" priority />
+                  <AnimatePresence mode="popLayout">
+                    <motion.div
+                      key={currentImageIndex}
+                      initial={{ opacity: 0, scale: 0.9, rotate: -10 }}
+                      animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                      exit={{ opacity: 0, scale: 1.1, rotate: 10 }}
+                      transition={{ duration: 1.2, ease: "easeInOut" }}
+                      className="absolute inset-0 w-full h-full"
+                    >
+                      {/* We scale the image up slightly to push the baked-in black borders out of the circular clipping mask */}
+                      <Image src={images[currentImageIndex]} alt="Weekend Platter" fill className="object-cover scale-[1.15]" priority />
+                    </motion.div>
+                  </AnimatePresence>
                 </motion.div>
 
                 {/* Orbiting Culinary Icons */}
