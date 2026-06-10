@@ -3,18 +3,23 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, Martini, Music, Star, Clock, UtensilsCrossed } from 'lucide-react'
+import { ArrowRight, Martini, Music, Star, Clock, UtensilsCrossed, Sparkles } from 'lucide-react'
 import PulseCTA from '@/components/shared/PulseCTA'
 
 export default function WeekendVibePage() {
 
   return (
-    <main className="min-h-screen bg-[#FAFAFA] text-[#0F0F0F] relative overflow-hidden font-sans pt-32 pb-16">
+    <main className="min-h-screen bg-[#05000A] text-white relative overflow-hidden font-sans pt-32 pb-16">
       
-      {/* Decorative floating elements */}
-      <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[20%] left-[10%] w-6 h-6 rounded-full bg-orange-300/30 blur-sm pointer-events-none" />
-      <motion.div animate={{ y: [0, 30, 0], scale: [1, 1.5, 1] }} transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[40%] right-[15%] w-12 h-12 rounded-full bg-rose-300/20 blur-md pointer-events-none" />
-      <motion.div animate={{ y: [0, -40, 0], x: [0, 20, 0] }} transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-[20%] left-[20%] w-32 h-32 rounded-full bg-blue-300/20 blur-xl pointer-events-none" />
+      {/* Disco Lights (Floating Elements) */}
+      <motion.div animate={{ y: [0, -40, 0], x: [0, 50, 0], scale: [1, 1.5, 1], opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[10%] left-[20%] w-32 h-32 rounded-full bg-fuchsia-500/40 blur-3xl pointer-events-none" />
+      <motion.div animate={{ y: [0, 60, 0], x: [0, -40, 0], scale: [1, 2, 1], opacity: [0.2, 0.7, 0.2] }} transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[30%] right-[10%] w-48 h-48 rounded-full bg-cyan-400/40 blur-3xl pointer-events-none" />
+      <motion.div animate={{ y: [0, -80, 0], x: [0, 60, 0], scale: [1, 1.8, 1], opacity: [0.4, 0.9, 0.4] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-[15%] left-[30%] w-40 h-40 rounded-full bg-purple-600/40 blur-3xl pointer-events-none" />
+      <motion.div animate={{ y: [0, 50, 0], x: [0, -50, 0], scale: [1, 1.3, 1], opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="absolute bottom-[30%] right-[25%] w-36 h-36 rounded-full bg-lime-400/30 blur-3xl pointer-events-none" />
+      
+      {/* Mini Laser Beams (Diagonal lines) */}
+      <motion.div animate={{ opacity: [0, 0.5, 0] }} transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }} className="absolute top-1/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent -rotate-12 transform origin-left" />
+      <motion.div animate={{ opacity: [0, 0.5, 0] }} transition={{ duration: 2.5, repeat: Infinity, repeatType: "reverse", delay: 1 }} className="absolute top-3/4 right-0 w-full h-[1px] bg-gradient-to-r from-transparent via-fuchsia-500/50 to-transparent -rotate-12 transform origin-right" />
 
       {/* --- HERO SECTION --- */}
       <section className="relative min-h-[90vh] flex flex-col md:flex-row items-center justify-between gap-6 pt-32 pb-16 px-4 md:px-8 max-w-7xl mx-auto z-10">
@@ -26,42 +31,48 @@ export default function WeekendVibePage() {
         >
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center space-x-2 bg-white text-gray-800 rounded-full px-5 py-2 mb-8 shadow-sm border border-gray-100 cursor-pointer self-start backdrop-blur-sm"
+            className="inline-flex items-center space-x-2 bg-white/10 text-white rounded-full px-5 py-2 mb-8 shadow-[0_0_15px_rgba(217,70,239,0.5)] border border-fuchsia-500/50 cursor-pointer self-start backdrop-blur-md"
           >
-            <Martini className="w-4 h-4 text-orange-500" />
-            <span className="text-xs font-bold uppercase tracking-widest">London's Weekend Vibe</span>
+            <Sparkles className="w-4 h-4 text-cyan-400 animate-pulse" />
+            <span className="text-xs font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-fuchsia-400">London's Weekend Vibe</span>
           </motion.div>
           
-          <h1 className="text-5xl md:text-8xl font-serif font-bold mb-8 text-[#0F0F0F] leading-tight tracking-tight">
+          <h1 className="text-5xl md:text-8xl font-serif font-bold mb-8 text-white leading-tight tracking-tight drop-shadow-lg">
             The Ultimate <br/>
             <span className="relative inline-block">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-rose-400 relative z-10">Weekend Vibe.</span>
-              <motion.span initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.8, duration: 1 }} className="absolute bottom-2 left-0 right-0 h-4 bg-orange-400/20 -z-10 origin-left" />
+              <motion.span 
+                animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }} 
+                transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                className="text-transparent bg-clip-text bg-[length:200%_auto] bg-gradient-to-r from-fuchsia-500 via-cyan-400 to-fuchsia-500 relative z-10"
+              >
+                Disco Vibe.
+              </motion.span>
+              <motion.span initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.8, duration: 1 }} className="absolute bottom-2 left-0 right-0 h-4 bg-fuchsia-500/30 -z-10 origin-left blur-sm" />
             </span>
           </h1>
           
-          <p className="text-xl text-gray-600 mb-12 max-w-lg leading-relaxed">
+          <p className="text-xl text-white/80 mb-12 max-w-lg leading-relaxed font-medium">
             Elevate your Friday nights and weekend brunches. Signature cocktails, an electric atmosphere, and the most authentic Indian sharing platters in London.
           </p>
 
           <div className="flex gap-6 mt-4">
-            <PulseCTA href="https://www.opentable.co.uk/r/masakali-restaurant-euston-london?corrid=41f8fc28-8609-4b5f-8750-347046547a0c&avt=eyJ2IjozLCJtIjowLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2026-06-09T19%3A00%3A00" target="_blank" rel="noopener noreferrer" className="group relative bg-[#0F0F0F] text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-xl hover:shadow-[0_20px_40px_rgba(251,146,60,0.3)] transition-all">
+            <PulseCTA href="https://www.opentable.co.uk/r/masakali-restaurant-euston-london?corrid=41f8fc28-8609-4b5f-8750-347046547a0c&avt=eyJ2IjozLCJtIjowLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2026-06-09T19%3A00%3A00" target="_blank" rel="noopener noreferrer" className="group relative bg-black text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(34,211,238,0.5)] border border-cyan-400/50 hover:shadow-[0_0_50px_rgba(217,70,239,0.8)] hover:border-fuchsia-500 transition-all duration-300">
               <span className="relative z-10 flex items-center">
                 Secure Your Weekend Table <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-rose-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-purple-500 to-fuchsia-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500 opacity-80"></div>
               <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white font-bold z-10">
                 Secure Your Weekend Table <ArrowRight className="w-5 h-5 ml-2 translate-x-1" />
               </span>
             </PulseCTA>
           </div>
           
-          <div className="mt-8 flex items-center gap-2 text-sm font-semibold text-gray-500">
-            <span className="flex items-center"><div className="w-2 h-2 rounded-full bg-orange-400 mr-2 animate-pulse"></div> Limited tables available for this weekend</span>
+          <div className="mt-8 flex items-center gap-2 text-sm font-semibold text-fuchsia-300">
+            <span className="flex items-center"><motion.div animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }} transition={{ duration: 1, repeat: Infinity }} className="w-2 h-2 rounded-full bg-cyan-400 mr-2 shadow-[0_0_8px_rgba(34,211,238,1)]"></motion.div> Limited tables available for this weekend</span>
           </div>
         </motion.div>
 
-        {/* Right Column: Spinning Food */}
+        {/* Right Column: Spinning Food (Disco Edition) */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -69,17 +80,23 @@ export default function WeekendVibePage() {
           className="w-full md:w-[45%] relative flex justify-center items-center mt-12 md:mt-0"
         >
           <div className="w-full max-w-[500px] aspect-square relative flex items-center justify-center p-8 md:p-12">
-              {/* Subtle Dashed Ring */}
+              {/* Outer Neon Ring */}
               <motion.div 
-                animate={{ rotate: 360 }} 
-                transition={{ repeat: Infinity, duration: 120, ease: "linear" }}
-                className="absolute inset-0 md:inset-4 rounded-full border-[1.5px] border-dashed border-gray-200 pointer-events-none"
+                animate={{ rotate: 360, borderColor: ['rgba(34,211,238,0.5)', 'rgba(217,70,239,0.5)', 'rgba(163,230,53,0.5)', 'rgba(34,211,238,0.5)'] }} 
+                transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
+                className="absolute inset-0 rounded-full border-2 border-dashed pointer-events-none shadow-[0_0_30px_rgba(217,70,239,0.3)]"
+              ></motion.div>
+              {/* Inner Neon Ring */}
+              <motion.div 
+                animate={{ rotate: -360, borderColor: ['rgba(217,70,239,0.5)', 'rgba(34,211,238,0.5)', 'rgba(217,70,239,0.5)'] }} 
+                transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
+                className="absolute inset-6 rounded-full border border-dotted pointer-events-none"
               ></motion.div>
               
               <motion.div 
                 animate={{ rotate: 360 }} 
                 transition={{ repeat: Infinity, duration: 45, ease: "linear" }} 
-                className="w-full h-full relative z-10 origin-center filter drop-shadow-2xl rounded-full"
+                className="w-full h-full relative z-10 origin-center filter drop-shadow-[0_0_40px_rgba(34,211,238,0.4)] rounded-full"
               >
                 <Image src="/images/user_upload_1.png" alt="Signature Weekend Platter" fill className="object-contain" priority />
               </motion.div>
@@ -89,67 +106,75 @@ export default function WeekendVibePage() {
 
       {/* --- WEEKEND VIBE SHOWCASE --- */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center py-20">
-        <h2 className="text-3xl md:text-5xl font-serif font-bold mb-16 text-[#0F0F0F]">Why Weekends Belong To Masakali</h2>
+        <h2 className="text-3xl md:text-5xl font-serif font-bold mb-16 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">Why Weekends Belong To Masakali</h2>
         
         <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 text-left relative overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:overflow-visible md:snap-none md:pb-0 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden">
           
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-            whileHover={{ y: -10 }}
-            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-white p-12 rounded-[3rem] shadow-sm hover:shadow-xl transition-all border border-gray-100 relative overflow-hidden backdrop-blur-sm"
+            whileHover={{ y: -10, scale: 1.02 }}
+            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-black/40 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(34,211,238,0.1)] hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all border border-cyan-500/30 hover:border-cyan-400 relative overflow-hidden backdrop-blur-xl"
           >
-            <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-orange-100 transition-all duration-300">
-              <Music className="w-8 h-8 text-orange-500" />
+            <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-cyan-500/40 transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.5)]">
+              <Music className="w-8 h-8 text-cyan-300" />
             </div>
-            <h3 className="font-serif font-bold text-2xl mb-4 group-hover:text-orange-500 transition-colors text-[#0F0F0F]">Electric Atmosphere</h3>
-            <p className="text-gray-600 text-base leading-relaxed">Low lighting, curated playlists, and a buzzing dining room perfect for kicking off your Friday or Saturday night.</p>
+            <h3 className="font-serif font-bold text-2xl mb-4 text-white group-hover:text-cyan-300 transition-colors drop-shadow-md">Electric Atmosphere</h3>
+            <p className="text-cyan-50 text-base leading-relaxed">Low lighting, curated playlists, and a buzzing dining room perfect for kicking off your Friday or Saturday night.</p>
           </motion.div>
           
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
-            whileHover={{ y: -10 }}
-            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-white p-12 rounded-[3rem] shadow-sm hover:shadow-xl transition-all border border-gray-100 relative overflow-hidden backdrop-blur-sm"
+            whileHover={{ y: -10, scale: 1.02 }}
+            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-black/40 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(217,70,239,0.1)] hover:shadow-[0_0_30px_rgba(217,70,239,0.3)] transition-all border border-fuchsia-500/30 hover:border-fuchsia-400 relative overflow-hidden backdrop-blur-xl"
           >
-            <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-orange-100 transition-all duration-300">
-              <Martini className="w-8 h-8 text-orange-500" />
+            <div className="w-16 h-16 bg-fuchsia-500/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-fuchsia-500/40 transition-all duration-300 shadow-[0_0_15px_rgba(217,70,239,0.5)]">
+              <Martini className="w-8 h-8 text-fuchsia-300" />
             </div>
-            <h3 className="font-serif font-bold text-2xl mb-4 group-hover:text-orange-500 transition-colors text-[#0F0F0F]">Signature Mixology</h3>
-            <p className="text-gray-600 text-base leading-relaxed">Spiced margaritas, gin infusions, and premium spirits tailored to perfectly complement Indian spices.</p>
+            <h3 className="font-serif font-bold text-2xl mb-4 text-white group-hover:text-fuchsia-300 transition-colors drop-shadow-md">Signature Mixology</h3>
+            <p className="text-fuchsia-50 text-base leading-relaxed">Spiced margaritas, gin infusions, and premium spirits tailored to perfectly complement Indian spices.</p>
           </motion.div>
 
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ y: -10 }}
-            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-white p-12 rounded-[3rem] shadow-sm hover:shadow-xl transition-all border border-gray-100 relative overflow-hidden backdrop-blur-sm"
+            whileHover={{ y: -10, scale: 1.02 }}
+            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-black/40 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(163,230,53,0.1)] hover:shadow-[0_0_30px_rgba(163,230,53,0.3)] transition-all border border-lime-500/30 hover:border-lime-400 relative overflow-hidden backdrop-blur-xl"
           >
-            <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-orange-100 transition-all duration-300">
-              <UtensilsCrossed className="w-8 h-8 text-orange-500" />
+            <div className="w-16 h-16 bg-lime-500/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-lime-500/40 transition-all duration-300 shadow-[0_0_15px_rgba(163,230,53,0.5)]">
+              <UtensilsCrossed className="w-8 h-8 text-lime-300" />
             </div>
-            <h3 className="font-serif font-bold text-2xl mb-4 group-hover:text-orange-500 transition-colors text-[#0F0F0F]">Late Night Dining</h3>
-            <p className="text-gray-600 text-base leading-relaxed">Because the best weekends don't end early. Enjoy our full premium menu late into the evening.</p>
+            <h3 className="font-serif font-bold text-2xl mb-4 text-white group-hover:text-lime-300 transition-colors drop-shadow-md">Late Night Dining</h3>
+            <p className="text-lime-50 text-base leading-relaxed">Because the best weekends don't end early. Enjoy our full premium menu late into the evening.</p>
           </motion.div>
           
         </div>
       </div>
 
       {/* --- SOCIAL PROOF --- */}
-      <section className="py-20 bg-white relative z-10 border-y border-gray-100 shadow-sm mt-12">
+      <section className="py-20 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent relative z-10 border-y border-fuchsia-500/20 mt-12 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="flex justify-center mb-6">
-            {[1,2,3,4,5].map(i => <Star key={i} className="w-6 h-6 fill-orange-400 text-orange-400" />)}
+            {[1,2,3,4,5].map((i, index) => (
+              <motion.div key={i} animate={{ y: [0, -5, 0] }} transition={{ duration: 1, repeat: Infinity, delay: index * 0.1 }}>
+                <Star className="w-8 h-8 fill-cyan-400 text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.8)] mx-1" />
+              </motion.div>
+            ))}
           </div>
-          <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4 text-[#0F0F0F]">"The only place we go for Friday nights out."</h3>
-          <p className="text-gray-600 italic text-lg mb-4">"Unbelievable vibe. The cocktails are insanely good, the music is perfectly pitched so you can still talk, and the food speaks for itself. Book well in advance!"</p>
-          <p className="font-bold text-sm uppercase tracking-widest text-gray-400">— Marcus T., Google Reviews</p>
+          <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4 text-white drop-shadow-lg">"The only place we go for Friday nights out."</h3>
+          <p className="text-cyan-100 italic text-lg mb-6">"Unbelievable vibe. The cocktails are insanely good, the music is perfectly pitched so you can still talk, and the food speaks for itself. Book well in advance!"</p>
+          <p className="font-bold text-sm uppercase tracking-widest text-fuchsia-300">— Marcus T., Google Reviews</p>
         </div>
       </section>
 
       {/* --- FINAL CTA --- */}
       <section className="py-24 max-w-4xl mx-auto px-4 text-center relative z-10">
-        <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#0F0F0F]">Don't Miss Out</h2>
-        <p className="text-xl text-gray-600 mb-10">Our weekend tables are our most popular. Secure your reservation now to guarantee your spot.</p>
-        <Link href="https://www.opentable.co.uk/r/masakali-restaurant-euston-london?corrid=41f8fc28-8609-4b5f-8750-347046547a0c&avt=eyJ2IjozLCJtIjowLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2026-06-09T19%3A00%3A00" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-gradient-to-r from-orange-400 to-rose-400 text-white font-bold text-lg px-12 py-5 rounded-2xl hover:opacity-90 transition-all shadow-xl group">
-          Book Your Weekend <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+        <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">Don't Miss Out</h2>
+        <p className="text-xl text-fuchsia-100 mb-10">Our weekend tables are our most popular. Secure your reservation now to guarantee your spot.</p>
+        <Link href="https://www.opentable.co.uk/r/masakali-restaurant-euston-london?corrid=41f8fc28-8609-4b5f-8750-347046547a0c&avt=eyJ2IjozLCJtIjowLCJwIjowLCJzIjowLCJuIjowfQ&p=2&sd=2026-06-09T19%3A00%3A00" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-transparent border-2 border-cyan-400 text-cyan-300 font-bold text-lg px-12 py-5 rounded-2xl hover:bg-cyan-400 hover:text-black hover:shadow-[0_0_40px_rgba(34,211,238,0.8)] transition-all duration-300 group relative overflow-hidden">
+          <span className="relative z-10 flex items-center">
+            Book Your Weekend <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+          </span>
+          {/* Strobe background effect on hover */}
+          <motion.div animate={{ opacity: [0, 1, 0] }} transition={{ duration: 0.1, repeat: Infinity }} className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 pointer-events-none" />
         </Link>
       </section>
     </main>
