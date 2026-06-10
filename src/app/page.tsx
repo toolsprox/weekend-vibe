@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, Martini, Music, Star, Clock, UtensilsCrossed, Sparkles } from 'lucide-react'
 import PulseCTA from '@/components/shared/PulseCTA'
+import Lottie from 'lottie-react'
+import discoFoodAnimation from '../../public/lottie/disco-food.json'
 
 export default function WeekendVibePage() {
 
@@ -100,7 +102,7 @@ export default function WeekendVibePage() {
                 className="absolute inset-4 rounded-full bg-gradient-to-tr from-cyan-500 via-fuchsia-500 to-lime-500 blur-3xl -z-10 mix-blend-screen"
               ></motion.div>
 
-              {/* Spinning Elemental Food */}
+              {/* Spinning Elemental Lottie Animation */}
               <motion.div 
                 animate={{ 
                   rotate: 360, 
@@ -113,9 +115,9 @@ export default function WeekendVibePage() {
                   ]
                 }} 
                 transition={{ repeat: Infinity, duration: 20, ease: "linear" }} 
-                className="w-full h-full relative z-10 origin-center rounded-full mix-blend-hard-light"
+                className="w-full h-full relative z-10 origin-center rounded-full mix-blend-hard-light flex items-center justify-center"
               >
-                <Image src="/images/user_upload_1.png" alt="Elemental Weekend Platter" fill className="object-contain mix-blend-normal" priority />
+                <Lottie animationData={discoFoodAnimation} loop={true} className="w-full h-full object-contain mix-blend-normal" />
               </motion.div>
             </div>
         </motion.div>
