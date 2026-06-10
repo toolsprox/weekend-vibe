@@ -237,13 +237,13 @@ export default function WeekendVibePage() {
       <section className="py-24 max-w-4xl mx-auto px-4 text-center relative z-10">
         <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">Don't Miss Out</h2>
         <p className="text-xl text-fuchsia-100 mb-10">Our weekend tables are our most popular. Secure your reservation now to guarantee your spot.</p>
-        <Link href="#reserve" className="inline-flex items-center bg-transparent border-2 border-cyan-400 text-cyan-300 font-bold text-lg px-12 py-5 rounded-2xl hover:bg-cyan-400 hover:text-black hover:shadow-[0_0_40px_rgba(34,211,238,0.8)] transition-all duration-300 group relative overflow-hidden">
+        <a href="#reserve" className="inline-flex items-center bg-transparent border-2 border-cyan-400 text-cyan-300 font-bold text-lg px-12 py-5 rounded-2xl hover:bg-cyan-400 hover:text-black hover:shadow-[0_0_40px_rgba(34,211,238,0.8)] transition-all duration-300 group relative overflow-hidden">
           <span className="relative z-10 flex items-center">
             Book Your Weekend <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </span>
           {/* Strobe background effect on hover */}
           <motion.div animate={{ opacity: [0, 1, 0] }} transition={{ duration: 0.1, repeat: Infinity }} className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 pointer-events-none" />
-        </Link>
+        </a>
       </section>
     </main>
   )

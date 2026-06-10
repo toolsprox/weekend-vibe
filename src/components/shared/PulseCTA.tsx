@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React from 'react'
@@ -30,9 +30,15 @@ export default function PulseCTA({ href, children, className = "", target, rel }
       
       {/* Actual Button with Tactile Squish on Tap */}
       <motion.div whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 400, damping: 17 }}>
-        <Link href={href} target={target} rel={rel} className={`relative z-10 block ${className}`}>
-          {children}
-        </Link>
+        {href.startsWith('#') ? (
+          <a href={href} className={`relative z-10 block ${className}`}>
+            {children}
+          </a>
+        ) : (
+          <Link href={href} target={target} rel={rel} className={`relative z-10 block ${className}`}>
+            {children}
+          </Link>
+        )}
       </motion.div>
     </div>
   )
