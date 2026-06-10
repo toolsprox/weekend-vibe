@@ -82,23 +82,40 @@ export default function WeekendVibePage() {
           <div className="w-full max-w-[500px] aspect-square relative flex items-center justify-center p-8 md:p-12">
               {/* Outer Neon Ring */}
               <motion.div 
-                animate={{ rotate: 360, borderColor: ['rgba(34,211,238,0.5)', 'rgba(217,70,239,0.5)', 'rgba(163,230,53,0.5)', 'rgba(34,211,238,0.5)'] }} 
+                animate={{ rotate: 360, borderColor: ['rgba(34,211,238,0.8)', 'rgba(217,70,239,0.8)', 'rgba(163,230,53,0.8)', 'rgba(34,211,238,0.8)'] }} 
                 transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-                className="absolute inset-0 rounded-full border-2 border-dashed pointer-events-none shadow-[0_0_30px_rgba(217,70,239,0.3)]"
+                className="absolute inset-0 rounded-full border-4 border-dashed pointer-events-none shadow-[0_0_50px_rgba(217,70,239,0.6)]"
               ></motion.div>
               {/* Inner Neon Ring */}
               <motion.div 
-                animate={{ rotate: -360, borderColor: ['rgba(217,70,239,0.5)', 'rgba(34,211,238,0.5)', 'rgba(217,70,239,0.5)'] }} 
+                animate={{ rotate: -360, borderColor: ['rgba(217,70,239,0.8)', 'rgba(34,211,238,0.8)', 'rgba(217,70,239,0.8)'] }} 
                 transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
-                className="absolute inset-6 rounded-full border border-dotted pointer-events-none"
+                className="absolute inset-6 rounded-full border-2 border-dotted pointer-events-none"
               ></motion.div>
               
+              {/* Elemental Energy Aura */}
               <motion.div 
-                animate={{ rotate: 360 }} 
-                transition={{ repeat: Infinity, duration: 45, ease: "linear" }} 
-                className="w-full h-full relative z-10 origin-center filter drop-shadow-[0_0_40px_rgba(34,211,238,0.4)] rounded-full"
+                animate={{ scale: [1, 1.15, 1], opacity: [0.6, 1, 0.6] }}
+                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                className="absolute inset-4 rounded-full bg-gradient-to-tr from-cyan-500 via-fuchsia-500 to-lime-500 blur-3xl -z-10 mix-blend-screen"
+              ></motion.div>
+
+              {/* Spinning Elemental Food */}
+              <motion.div 
+                animate={{ 
+                  rotate: 360, 
+                  filter: [
+                    'hue-rotate(0deg) saturate(200%) brightness(120%) drop-shadow(0 0 30px rgba(34,211,238,0.8))',
+                    'hue-rotate(90deg) saturate(250%) brightness(130%) drop-shadow(0 0 40px rgba(217,70,239,0.8))',
+                    'hue-rotate(180deg) saturate(200%) brightness(120%) drop-shadow(0 0 30px rgba(163,230,53,0.8))',
+                    'hue-rotate(270deg) saturate(250%) brightness(130%) drop-shadow(0 0 40px rgba(217,70,239,0.8))',
+                    'hue-rotate(360deg) saturate(200%) brightness(120%) drop-shadow(0 0 30px rgba(34,211,238,0.8))'
+                  ]
+                }} 
+                transition={{ repeat: Infinity, duration: 20, ease: "linear" }} 
+                className="w-full h-full relative z-10 origin-center rounded-full mix-blend-hard-light"
               >
-                <Image src="/images/user_upload_1.png" alt="Signature Weekend Platter" fill className="object-contain" priority />
+                <Image src="/images/user_upload_1.png" alt="Elemental Weekend Platter" fill className="object-contain mix-blend-normal" priority />
               </motion.div>
             </div>
         </motion.div>
