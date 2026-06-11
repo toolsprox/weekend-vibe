@@ -46,7 +46,7 @@ export default function ReservationModal() {
             initial={{ scale: 0.95, opacity: 0, y: 20 }} 
             animate={{ scale: 1, opacity: 1, y: 0 }} 
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
-            className="relative w-full max-w-4xl h-[85vh] bg-[#05000A] border border-cyan-500/30 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(34,211,238,0.2)] flex flex-col"
+            className="relative w-full max-w-4xl h-[85vh] bg-gradient-to-br from-indigo-950 to-fuchsia-950 border border-cyan-500/30 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(34,211,238,0.2)] flex flex-col"
           >
             <div className="flex justify-between items-center p-4 border-b border-white/10 bg-black/50">
               <span className="font-bold tracking-widest uppercase text-white flex items-center gap-2">
@@ -56,7 +56,7 @@ export default function ReservationModal() {
                 <X className="w-5 h-5 text-white" />
               </button>
             </div>
-            <div className="flex-grow w-full relative bg-[#05000A] flex flex-col items-center justify-center p-8 text-center">
+            <div className="flex-grow w-full relative bg-transparent flex flex-col items-center justify-center p-8 text-center">
               {/* Background Glow */}
               <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-fuchsia-500/10 to-lime-500/10 blur-3xl pointer-events-none"></div>
               

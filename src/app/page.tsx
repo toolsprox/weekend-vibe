@@ -25,7 +25,7 @@ export default function WeekendVibePage() {
   }, [images.length])
 
   return (
-    <main className="min-h-screen bg-[#05000A] text-white relative overflow-hidden font-sans pt-32 pb-16">
+    <main className="min-h-screen bg-gradient-to-br from-indigo-950 via-[#1e0a2d] to-fuchsia-950 text-white relative overflow-hidden font-sans pt-32 pb-16">
       
       {/* Disco Lights (Floating Elements) - Hidden on mobile for performance */}
       <motion.div animate={{ y: [0, -40, 0], x: [0, 50, 0], scale: [1, 1.5, 1], opacity: [0.3, 0.8, 0.3] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} className="hidden md:block absolute top-[10%] left-[20%] w-32 h-32 rounded-full bg-fuchsia-500/40 blur-3xl pointer-events-none" />
@@ -181,7 +181,7 @@ export default function WeekendVibePage() {
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             whileHover={{ y: -10, scale: 1.02 }}
-            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-[#11051F] md:bg-black/40 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(34,211,238,0.1)] hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all border border-cyan-500/30 hover:border-cyan-400 relative overflow-hidden md:backdrop-blur-xl"
+            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-white/5 md:bg-white/10 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(34,211,238,0.1)] hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] transition-all border border-cyan-500/30 hover:border-cyan-400 relative overflow-hidden md:backdrop-blur-xl"
           >
             <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-cyan-500/40 transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.5)]">
               <Music className="w-8 h-8 text-cyan-300" />
@@ -193,7 +193,7 @@ export default function WeekendVibePage() {
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
             whileHover={{ y: -10, scale: 1.02 }}
-            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-[#11051F] md:bg-black/40 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(217,70,239,0.1)] hover:shadow-[0_0_30px_rgba(217,70,239,0.3)] transition-all border border-fuchsia-500/30 hover:border-fuchsia-400 relative overflow-hidden md:backdrop-blur-xl"
+            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-white/5 md:bg-white/10 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(217,70,239,0.1)] hover:shadow-[0_0_30px_rgba(217,70,239,0.3)] transition-all border border-fuchsia-500/30 hover:border-fuchsia-400 relative overflow-hidden md:backdrop-blur-xl"
           >
             <div className="w-16 h-16 bg-fuchsia-500/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-fuchsia-500/40 transition-all duration-300 shadow-[0_0_15px_rgba(217,70,239,0.5)]">
               <Martini className="w-8 h-8 text-fuchsia-300" />
@@ -205,7 +205,7 @@ export default function WeekendVibePage() {
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ y: -10, scale: 1.02 }}
-            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-[#11051F] md:bg-black/40 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(163,230,53,0.1)] hover:shadow-[0_0_30px_rgba(163,230,53,0.3)] transition-all border border-lime-500/30 hover:border-lime-400 relative overflow-hidden md:backdrop-blur-xl"
+            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-white/5 md:bg-white/10 p-12 rounded-[3rem] shadow-[0_0_20px_rgba(163,230,53,0.1)] hover:shadow-[0_0_30px_rgba(163,230,53,0.3)] transition-all border border-lime-500/30 hover:border-lime-400 relative overflow-hidden md:backdrop-blur-xl"
           >
             <div className="w-16 h-16 bg-lime-500/20 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-lime-500/40 transition-all duration-300 shadow-[0_0_15px_rgba(163,230,53,0.5)]">
               <UtensilsCrossed className="w-8 h-8 text-lime-300" />
